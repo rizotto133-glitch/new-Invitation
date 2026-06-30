@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speaking Gym · Приглашение</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: #f4f7fb;
+            color: #1e2b3c;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .document {
+            max-width: 820px;
+            width: 100%;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0, 20, 40, 0.08);
+            padding: 2.8rem 2.8rem 3rem;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b2230;
+            margin-bottom: 0.2rem;
+            line-height: 1.1;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #3e5a6b;
+            font-weight: 400;
+            border-left: 4px solid #4c9fcf;
+            padding-left: 1rem;
+            margin-bottom: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 2.2rem 0 1rem 0;
+            color: #0b2230;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #1a3a4e;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #1e3343;
+        }
+
+        ul,
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.8rem 0 1.2rem 0;
+        }
+
+        ul li,
+        .feature-list li {
+            padding-left: 1.6rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        ul li::before,
+        .feature-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4c9fcf;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0 1.5rem 0;
+            font-size: 1rem;
+        }
+
+        th,
+        td {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2eaf0;
+        }
+
+        th {
+            background: #eef4f9;
+            font-weight: 600;
+            color: #1a3a4e;
+        }
+
+        td:first-child {
+            font-weight: 500;
+        }
+
+        .page-break {
+            margin-top: 2.5rem;
+            border-top: 1px solid #dce6ed;
+            padding-top: 0.5rem;
+        }
+
+        .subscription-box {
+            background: #f0f6fc;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .price-main {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0b2230;
+            letter-spacing: -0.02em;
+        }
+
+        .price-note {
+            font-size: 1.1rem;
+            color: #2a5778;
+            font-weight: 500;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 2.5rem;
+            margin: 0.5rem 0 0.2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0b2230;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #3e5a6b;
+        }
+
+        .trial-box {
+            background: #ffffff;
+            border: 2px solid #d4e2ed;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 1.8rem 0 1.2rem 0;
+        }
+
+        .trial-box .price-main {
+            font-size: 2rem;
+        }
+
+        .footer-signature {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce6ed;
+            font-size: 1rem;
+            color: #1f4a62;
+        }
+
+        .footer-signature strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #1e2b3c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 6px 14px 6px 10px;
+            border-radius: 40px;
+            background: #f8f9fa;
+            border: 1px solid #e0e8f0;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .social-link:hover {
+            background: #f0f2f5;
+            box-shadow: 0 4px 12px rgba(0, 20, 40, 0.06);
+        }
+
+        .social-link svg {
+            display: block;
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+        }
+
+        .social-link .handle {
+            font-weight: 600;
+            color: #0b2230;
+        }
+
+        .social-link .label {
+            font-weight: 400;
+            color: #3e5a6b;
+        }
+
+        .social-header {
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #e8eef3;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-footer {
+            margin-top: 1.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #e8eef3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ----- ОТЗЫВЫ: компактная сетка + выделенный ----- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin: 1.2rem 0 0 0;
+        }
+
+        .review-card {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 20, 40, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #f8fafc;
+            border: 1px solid #e2eaf0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 20, 40, 0.08);
+        }
+
+        .review-card .review-caption {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #3e5a6b;
+            padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #e2eaf0;
+            order: -1; /* подпись сверху */
+        }
+
+        .review-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #eef4f9;
+            order: 0;
+        }
+
+        /* ---- ВЫДЕЛЕННЫЙ (review8) ---- */
+        .featured-review {
+            max-width: 440px;
+            margin: 0 auto 1.8rem auto;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0, 20, 40, 0.10);
+            border: 2px solid #d62976;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-review:hover {
+            transform: scale(1.01);
+            box-shadow: 0 12px 40px rgba(214, 41, 118, 0.15);
+        }
+
+        .featured-review .review-caption {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e2b3c;
+            padding: 0.6rem 0.5rem 0.3rem 0.5rem;
+            text-align: center;
+            background: white;
+            border-bottom: 2px solid #d62976;
+            order: -1;
+        }
+
+        .featured-review img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #eef4f9;
+            order: 0;
+        }
+
+        @media (max-width: 600px) {
+            .document {
+                padding: 1.5rem 1.2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .subscription-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .stats-grid {
+                gap: 1rem;
+            }
+            .trial-box {
+                padding: 1.2rem;
+            }
+            .social-link {
+                font-size: 1rem;
+                padding: 4px 12px 4px 8px;
+            }
+            .social-link svg {
+                width: 22px;
+                height: 22px;
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 0.6rem;
+            }
+            .featured-review {
+                max-width: 100%;
+                margin: 0 0 1.2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="document">
+
+    <!-- HEADER -->
+    <div class="social-header">
+        <a href="https://instagram.com/eng_wall" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="url(#instaGrad)">
+                <defs>
+                    <linearGradient id="instaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%"   style="stop-color:#feda75; stop-opacity:1" />
+                        <stop offset="25%"  style="stop-color:#fa7e1e; stop-opacity:1" />
+                        <stop offset="50%"  style="stop-color:#d62976; stop-opacity:1" />
+                        <stop offset="75%"  style="stop-color:#962fbf; stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#4f5bd5; stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+            <span class="handle">@eng_wall</span>
+            <span class="label">С1+ лексика здесь</span>
+        </a>
+    </div>
+
+    <!-- PAGE 1 -->
+    <h1>Speaking Gym</h1>
+    <div class="subhead">тренировка речи 6 дней в неделю · В1+ — С1 уровни</div>
+
+    <h2>Что такое Speaking Gym</h2>
+    <p>Speaking Gym — это не просто разговорный клуб, а настоящая тренировка речи.</p>
+    <p>Мы встречаемся онлайн 6 раз в неделю (вы ходите тогда, когда удобно), обсуждаем живые темы, используем готовые материалы и работаем исключительно в парах и тройках. Никаких скучных учебников — только реальный английский, который пригодится в жизни.</p>
+
+    <h2>Фишки клуба</h2>
+    <ul class="feature-list">
+        <li>Каждый день — новая тема — от карьеры до психологии, от денег до здоровья.</li>
+        <li>Готовые материалы в PDF — вы получаете слова и фразы до встречи в красочных Vocabulary Packs и сразу применяете их на практике.</li>
+        <li>Интерактивный тренажёр лексики С1+ — разработан специально для участников клуба.</li>
+        <li>Каждую неделю к нам присоединяется носитель языка из Британии.</li>
+    </ul>
+
+    <h2>Пространство для живого общения</h2>
+    <p>Это место, где можно говорить на английском без оценок, без домашних заданий и без страха ошибиться. С поддержкой, интересными темами и свободой быть собой.</p>
+    <ul class="feature-list">
+        <li>Обращаемся как удобно — на «ты» или «вы»</li>
+        <li>Стикеры, мемы, гифки — чат живёт</li>
+        <li>Можно делиться полезными ссылками</li>
+        <li>Пишите в любое время — тихих часов нет</li>
+    </ul>
+
+    <h2>Встречи клуба: как, когда и сколько</h2>
+
+    <!-- PAGE 2 -->
+    <h3>Расписание (по Минску, UTC+3)</h3>
+    <table>
+        <thead>
+            <tr><th>День</th><th>Время</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>ПН</td><td>10:30</td></tr>
+            <tr><td>ВТ</td><td>10:30</td></tr>
+            <tr><td>СР</td><td>19:30</td></tr>
+            <tr><td>ЧТ</td><td>21:10</td></tr>
+            <tr><td>ПТ</td><td>19:30</td></tr>
+            <tr><td>ВС</td><td>18:00</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Выходной — суббота</strong></p>
+    <p>Длительность встречи: 60–80 минут — в зависимости от темы, настроения и количества участников.</p>
+    <p>Можно ли опаздывать? Да, в любое время. Если вы опоздали — я добавлю вас в уже открытый зал, к другой паре участников.</p>
+
+    <h2>Материалы и подготовка</h2>
+    <p>Мы работаем в формате Flipped Classroom — предварительное знакомство с материалами делает встречу глубже и живее.</p>
+    <ul class="feature-list">
+        <li>За день до встречи вы получаете Vocabulary Pack — ключевые слова и фразы по теме.</li>
+        <li>Сразу после начала встречи вы получаете Activity Pack — тренировка, расписанная максимально подробно по всем этапам. Вы вольны идти по ней полностью или пропускать/изменять какие-то моменты — вы решаете это в вашей паре самостоятельно.</li>
+    </ul>
+
+    <h2>Почему это удобно:</h2>
+    <ul class="feature-list">
+        <li>у каждого есть полные материалы и инструкция</li>
+        <li>участники делятся на пары и тройки в отдельных залах</li>
+        <li>в маленьких группах каждый получает достаточно времени для общения и практики</li>
+    </ul>
+
+    <!-- ========================================================= -->
+    <!--  БЛОК ОТЗЫВОВ: review8 выделен, остальные компактно       -->
+    <!-- ========================================================= -->
+    <h2>Отзывы участников</h2>
+    <p style="margin-bottom: 0.5rem;">Реальные скриншоты из нашего Telegram-чата:</p>
+
+    <!-- ВЫДЕЛЕННЫЙ ОТЗЫВ (review8) -->
+    <div class="featured-review">
+        <p class="review-caption">⭐ Отзыв из Telegram</p>
+        <img src="review8.png" alt="Самый крутой отзыв" />
+    </div>
+
+    <!-- Остальные 7 отзывов в компактной сетке -->
+    <div class="reviews-grid">
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review1.png" alt="Отзыв 1" />
+        </div>
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review2.png" alt="Отзыв 2" />
+        </div>
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review3.png" alt="Отзыв 3" />
+        </div>
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review4.png" alt="Отзыв 4" />
+        </div>
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review5.png" alt="Отзыв 5" />
+        </div>
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review6.png" alt="Отзыв 6" />
+        </div>
+        <div class="review-card">
+            <p class="review-caption">⭐ Отзыв из Telegram</p>
+            <img src="review7.png" alt="Отзыв 7" />
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page-break"></div>
+
+    <h2>Условия подписки</h2>
+    <p>Для вашего удобства подписка автоматически продлевается 1-го числа каждого месяца. Отменить её можно в любой день.</p>
+
+    <div class="subscription-box">
+        <div>
+            <div class="price-main">€47 <span style="font-size:1.2rem;font-weight:400;color:#2a5778;">в месяц</span></div>
+            <div class="price-note" style="margin-top:0.2rem;">менее 2 € за ОДНУ встречу</div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">встреч в неделю</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24</span>
+                <span class="stat-label">встречи в месяц</span>
+            </div>
+        </div>
+    </div>
+    <p style="font-size:0.95rem;color:#3e5a6b;">Оплата через Stripe (международная платёжная система).</p>
+
+    <h2>Попробуйте без подписки</h2>
+    <div class="trial-box">
+        <p style="margin-bottom:0.5rem;">Если вы ещё не уверены, можно посетить первую встречу отдельно, без подписки — всего за <span class="price-main" style="font-size:2rem;">€7</span>.</p>
+        <p>Это хороший способ познакомиться с форматом, понять, подходит ли он вам, и ничего не терять.</p>
+        <p style="margin-top:0.8rem;">Если вы хотите попробовать — напишите мне «+» или просто «Расскажите подробнее».</p>
+        <p>Я пришлю ссылку на Telegram-канал и все детали.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="social-footer">
+        <a href="https://instagram.com/eng_wall" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="url(#instaGrad)">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+            <span class="handle">@eng_wall</span>
+            <span class="label">С1+ лексика здесь</span>
+        </a>
+    </div>
+
+    <div class="footer-signature">
+        Юля - преподаватель английского
+        <strong>Буду рада снова вас слышать!</strong>
+    </div>
+
+</div>
+</body>
+</html>
